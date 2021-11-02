@@ -1,4 +1,4 @@
-import { ADD_ONE, APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEM_ADD, MEM_CLEAR, MEM_RECALL } from './../actions';
+import { APPLY_NUMBER, CHANGE_OPERATION, CLEAR_DISPLAY, MEM_ADD, MEM_CLEAR, MEM_RECALL } from './../actions';
 
 export const initialState = {
 	total: 0,
@@ -21,12 +21,6 @@ const reducer = (state, action) => {
 	const { operation } = state;
 
 	switch (action.type) {
-		case (ADD_ONE):
-			return ({
-				...state,
-				total: state.total + 1
-			});
-
 		case (APPLY_NUMBER):
 			return ({
 				...state,
