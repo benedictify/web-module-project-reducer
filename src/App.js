@@ -36,8 +36,6 @@ function App() {
 		dispatch(memClear())
 	}
 
-	console.log(state.total)
-
   return (
     <div className="App">
       <nav className="navbar navbar-dark bg-dark">
