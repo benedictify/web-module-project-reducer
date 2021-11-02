@@ -1,5 +1,65 @@
 # The Reducer Pattern Module Project: The Calculator
+---
 
+I'm interrupting this readme to add some notes on future features planned.
+The original readme will continue below.
+
+---
+## STRETCH GOAL: Implement a proper calculator
+
+## Notes:
+* We need a place to store each digit - could be an array - then we can push the new number onto the array, 
+	then afterwards maybe stringify it and turn it into a number
+	- see if a js array function can turn the contents of an array into numbers. Stringify may be our best bet. 
+	- it can be converted to a number by a helper function before being saved to state. That helper function can be imported and called inside the reducer. 
+
+* This can be done with a firstNumber and a secondNumber, separate from the two numbers. 
+	- Maybe the displayed total should be used as the second number? We could do that in a refactor.
+
+* state can also store the operation upon the click of the operation button. 
+- if button is clicked again, it should **perform the operation, as if equals were clicked, then replacing firstNumber with the currently displayed number**
+
+- the changeOperation function can be called on click and it can just replace whatever's there with the new thing, even if it's the same as the old one
+	- we can use the existing changeOperation action, but move it to onClick, when it's clicked between the first and second number being clicked.
+
+* equals can be used to compute the answer and replace the display
+
+
+## Buttons to add
+* equals
+* zero
+* division
+* clear-entry as well as clear-all (look up standard calc buttons)
+
+
+## Data structures: 
+* first number: an array holding one digit in each position
+* second number: as above
+* operation: string signifying operation
+* memory: digits array
+* total |or| current display: digits array
+	- would become total upon equals click
+	- the operation should also be performed
+
+
+## Behaviors
+* input a number
+* select an operation
+* equals: perform calculation, replacing firstNumber with total
+	* operation button clicked after second number entered: perform calculation as above
+
+
+## Backlog - subsequent to MVP
+* implement a display of the current numbers in the equation, before equation is carried out
+- first number, current operation (to be changed when new button is pressed) and possibly the second number, equals and total. 
+	- Total could be displayed only in the main display.
+-	the equation display could be above the main display
+
+
+
+---
+
+---
 This module explored the reducer pattern. During the module, you studied what immutability is, what reducers, actions and dispatch are, and how to use the reducer hook. In this project, you will practice each of the steps of building state and actions into an application. We will do this by both adding in and building from scratch all of the pieces of the reducer pattern.
 
 ## Objectives
