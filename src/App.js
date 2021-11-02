@@ -7,7 +7,7 @@ import CalcButton from './components/CalcButton';
 
 import reducer, { initialState } from './reducers/index'
 
-import { applyNumber, changeOperation, clearDisplay, memAdd, memRecall } from "./actions/index"
+import { applyNumber, changeOperation, clearDisplay, memAdd, memClear, memRecall } from "./actions/index"
 
 function App() {
 	const [state, dispatch] = useReducer(reducer, initialState);
@@ -32,6 +32,10 @@ function App() {
 		dispatch(memRecall())
 	}
 
+	const memClearHandler = () => {
+		dispatch(memClear())
+	}
+
 	console.log(state.total)
 
   return (
@@ -53,7 +57,7 @@ function App() {
             <div className="row">
               <CalcButton value={"M+"} onClick={() => memAddHandler()}/>
               <CalcButton value={"MR"} onClick={() => memRecallHandler()}/>
-              <CalcButton value={"MC"}/>
+              <CalcButton value={"MC"} onClick={() => memClearHandler()}/>
             </div>
 
             <div className="row">

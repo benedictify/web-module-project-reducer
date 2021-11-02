@@ -4,6 +4,7 @@ export const CHANGE_OPERATION = "CHANGE_OPERATION";
 export const CLEAR_DISPLAY = "CLEAR_DISPLAY";
 export const MEM_ADD = "MEM_ADD";
 export const MEM_RECALL = "MEM_RECALL";
+export const MEM_CLEAR = "MEM_CLEAR";
 
 export const applyNumber = (number) => {
 	return({ 
@@ -32,5 +33,11 @@ export const memAdd = () => {
 export const memRecall = () => {
 	return({
 		type: MEM_RECALL
+	})
+} 
+
+export const memClear = () => {
+	return({
+		type: MEM_CLEAR
 	})
 } 
